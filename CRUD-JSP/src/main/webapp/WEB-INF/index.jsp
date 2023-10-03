@@ -6,13 +6,18 @@
 
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="javaBeans.Categoria" %>
+<%@ page import="cad.CategoriCad" %>
+<%@ page import="java.sql.SQLException" %>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,300,400italic,500,700,100">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,800,300,600,700">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abel">
-
+    
     
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,7 +41,6 @@
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
-    <%@page import = "javaBeans.Categoria.java" %>
 </head><!--/head-->
 
 <body>
@@ -226,35 +230,43 @@
 			<div class="row">
 				<div class="col-sm-3">
 					<div class="left-sidebar">
-						<h2>Categorías</h2>
-						<div class="panel-group category-products" id="accordian"><!--category-productsr--> 
-                                                    <%! ArrayList<Categoria> lista = CategoriaCad.listar(); %>
-                                                    <% for(int i = 0; lista.size() > i; i++){ %>
-                                                    
-                                                    <div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title">
-										<a data-toggle="collapse" data-parent="#accordian" href="#sportswear">
-											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
-											<%= lista.get(i).Nombre()  %>
-										</a>
-									</h4>
-								</div>
-								<div id="sportswear" class="panel-collapse collapse">
-									<div class="panel-body">
-										<ul>
-											<li><a href="#">Nike </a></li>
-											<li><a href="#">Under Armour </a></li>
-											<li><a href="#">Adidas </a></li>
-											<li><a href="#">Puma</a></li>
-											<li><a href="#">ASICS </a></li>
-										</ul>
-									</div>
-								</div>
-							</div>
-                                                    
-                                                    <% } %>
-						</div><!--/category-products-->
+                                            <h2>Categorías</h2>
+                                            <div class="panel-group category-products" id="accordian"><!--category-productsr-->
+                                                <%
+                                                try {
+                                                    ArrayList<Categoria> lista = CategoriCad.listar();
+                                                    if (lista != null) {
+                                                        for (int i = 0; i < lista.size(); i++) {
+                                                %>
+                                                <div class="panel panel-default">
+                                                    <div class="panel-heading">
+                                                        <h4 class="panel-title">
+                                                            <a data-toggle="collapse" data-parent="#accordian" href="#sportswear">
+                                                                <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                                                                    <%= lista.get(i).getNombre() %>
+                                                            </a>
+                                                        </h4>
+                                                    </div>
+                                                    <div id="sportswear" class="panel-collapse collapse">
+                                                        <div class="panel-body">
+                                                            <ul>
+                                                                <li><a href="#">Nike </a></li>
+                                                                <li><a href="#">Under Armour </a></li>
+                                                                <li><a href="#">Adidas </a></li>
+                                                                <li><a href="#">Puma</a></li>
+                                                                <li><a href="#">ASICS </a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <%
+                                                        }
+                                                    }
+                                                } catch (Exception ex) {
+                                                    ex.printStackTrace();
+                                                }
+                                                %>
+                                            </div><!--/category-products-->
 					
 						<div class="brands_products"><!--brands_products-->
 							<h2>Marcas</h2>
