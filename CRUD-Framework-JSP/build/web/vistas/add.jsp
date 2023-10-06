@@ -21,11 +21,18 @@
                     <input class="form-control" type="text" name="txtDni"><br>
                     Nombres: <br>
                     <input class="form-control" type="text" name="txtNom"><br>
+                    Apellidos:<br>
+                    <input class="form-control" type="text" name="txtApe"><br>
+                    Telefono: <br>
+                    <input class="form-control" type="text" name="txtTel"><br>
+                    Email:<br>
+                    <input class="form-control" type="text" name="txtEma"><br>
+                    Residencia: <br>
+                    <input class="form-control" type="text" name="txtRes"><br>
                     <input class="btn btn-primary" type="submit" name="accion" value="Agregar">
                     <a href="Controlador?accion=listar">Regresar</a>
                 </form>
             </div>
-
         </div>
     </body>
 </html>

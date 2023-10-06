@@ -2,40 +2,81 @@
 package Modelo;
 
 public class Persona {
-    int id;
-    String dni;
-    String nom;
+    int atrId;
+    String atrDni;
+    String atrName;
+    String atrLstName;
+    String atrPhone;
+    String atrEmail;
+    String atrResid;
 
     public Persona() {
     }
 
-    public Persona(String dni, String nom) {
-        this.dni = dni;
-        this.nom = nom;
+    public Persona(String prmDni, String prmName, String prmLstName, String prmPhone, String prmEmail, String prmResid) {
+        this.atrDni = prmDni;
+        this.atrName = prmName;
+        this.atrLstName = prmLstName;
+        this.atrPhone = prmPhone;
+        this.atrEmail = prmEmail;
+        this.atrResid = prmResid;
     }
 
-    public int getId() {
-        return id;
+    public int getAtrId() {
+        return atrId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setAtrId(int atrId) {
+        this.atrId = atrId;
     }
 
-    public String getDni() {
-        return dni;
+    public String getAtrDni() {
+        return atrDni;
     }
 
-    public void setDni(String dni) {
-        this.dni = dni;
+    public void setAtrDni(String atrDni) {
+        this.atrDni = atrDni;
     }
 
-    public String getNom() {
-        return nom;
+    public String getAtrName() {
+        return atrName;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
+    public void setAtrName(String atrName) {
+        this.atrName = atrName;
     }
+
     
+
+    public String getAtrLstName() {
+        return atrLstName;
+    }
+
+    public void setAtrLstName(String atrLstName) {
+        this.atrLstName = atrLstName;
+    }
+
+    public String getAtrPhone() {
+        return atrPhone;
+    }
+
+    public void setAtrPhone(String prmPhone) {
+        this.atrPhone = prmPhone;
+    }
+
+    public String getAtrEmail() {
+        return atrEmail;
+    }
+
+    public void setAtrEmail(String prmEmail) {
+        this.atrEmail = prmEmail;
+    }
+
+    public String getAtrResid() {
+        return atrResid;
+    }
+
+    public void setAtrResid(String prmResid) {
+        this.atrResid = prmResid;
+    }
 }
