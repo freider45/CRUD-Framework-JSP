@@ -9,30 +9,32 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
         <title>JSP Page</title>
     </head>
-    <body>
-        <div class="container">
-            <div class="col-lg-6">
-                <h1>Agregar Persona</h1>
+    <body class="bg-gray-200">
+        <div class="container mx-auto py-12">
+            <div class="w-full lg:w-1/2 mx-auto">
+                <h1 class="text-4xl font-bold mb-4">Agregar Persona</h1>
                 <form action="Controlador">
                     DNI:<br>
-                    <input class="form-control" type="text" name="txtDni"><br>
+                    <input class="form-control px-3 py-2 border rounded" type="text" name="txtDni"><br>
                     Nombres: <br>
-                    <input class="form-control" type="text" name="txtNom"><br>
+                    <input class="form-control px-3 py-2 border rounded" type="text" name="txtNom"><br>
                     Apellidos:<br>
-                    <input class="form-control" type="text" name="txtApe"><br>
+                    <input class="form-control px-3 py-2 border rounded" type="text" name="txtApe"><br>
                     Telefono: <br>
-                    <input class="form-control" type="text" name="txtTel"><br>
+                    <input class="form-control px-3 py-2 border rounded" type="text" name="txtTel"><br>
                     Email:<br>
-                    <input class="form-control" type="text" name="txtEma"><br>
+                    <input class="form-control px-3 py-2 border rounded" type="text" name="txtEma"><br>
                     Residencia: <br>
-                    <input class="form-control" type="text" name="txtRes"><br>
-                    <input class="btn btn-primary" type="submit" name="accion" value="Agregar">
-                    <a href="Controlador?accion=listar">Regresar</a>
+                    <input class="form-control px-3 py-2 border rounded" type="text" name="txtRes"><br>
+                    <input class="inline-block px-6 py-2 text-lg text-white bg-blue-500 rounded hover:bg-blue-600 mt-4" type="submit" name="accion" value="Agregar">
+                    <a class="inline-block px-6 py-2 text-lg bg-gray-300 rounded hover:bg-gray-400 mt-4 ml-4" href="Controlador?accion=listar">Regresar</a>
                 </form>
             </div>
+
         </div>
     </body>
 </html>
+
