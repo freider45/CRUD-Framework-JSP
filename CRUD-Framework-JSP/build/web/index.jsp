@@ -4,14 +4,12 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link href="./css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
         <title>JSP Page</title>
     </head>
-    <body>
-        <br>
-        <br>
-        <div class="container">
-            <a class="btn btn-success btn-lg" href="Controlador?accion=listar">Listar Persona</a>
+    <body class="bg-gray-200">
+        <div class="container mx-auto py-12">
+            <a class="inline-block px-6 py-2 text-lg text-white bg-green-500 rounded hover:bg-green-600" href="Controlador?accion=listar">Listar Persona</a>
         </div>
     </body>
 </html>

@@ -8,25 +8,25 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
         <title>JSP Page</title>
     </head>
-    <body>
-        <div class="container">
-            <h1>Personas</h1>
-            <a class="btn btn-success" href="Controlador?accion=add">Agregar Nuevo</a>
+    <body class="bg-gray-200">
+        <div class="container mx-auto py-12">
+            <h1 class="text-4xl font-bold mb-4">Personas</h1>
+            <a class="inline-block px-6 py-2 text-lg text-white bg-green-500 rounded hover:bg-green-600" href="Controlador?accion=add">Agregar Nuevo</a>
             <br>
             <br>
-            <table class="table table-bordered">
+            <table class="table-auto w-full mt-4 divide-y divide-gray-200">
                 <thead>
-                    <tr>
-                        <th class="text-center">ID</th>
-                        <th class="text-center">DNI</th>
-                        <th class="text-center">NOMBRES</th>
-                        <th class="text-center">APELLIDOS</th>
-                        <th class="text-center">TELEFONO</th>
-                        <th class="text-center">EMAIL</th>
-                        <th class="text-center">RESIDENCIA</th>
+                    <tr class="bg-gray-300">
+                        <th class="px-4 py-2">ID</th>
+                        <th class="px-4 py-2">DNI</th>
+                        <th class="px-4 py-2">NOMBRES</th>
+                        <th class="px-4 py-2">APELLIDOS</th>
+                        <th class="px-4 py-2">TELEFONO</th>
+                        <th class="px-4 py-2">EMAIL</th>
+                        <th class="px-4 py-2">RESIDENCIA</th>
                     </tr>
                 </thead>
                 <%
@@ -38,18 +38,18 @@
                         per=iter.next();
                     
                 %>
-                <tbody>
+                <tbody class="divide-y divide-gray-200">
                     <tr>
-                        <td class="text-center"><%= per.getAtrId()%></td>
-                        <td class="text-center"><%= per.getAtrDni()%></td>
-                        <td><%= per.getAtrName()%></td>
-                        <td><%= per.getAtrLstName()%></td>
-                        <td><%= per.getAtrPhone()%></td>
-                        <td><%= per.getAtrEmail()%></td>
-                        <td><%= per.getAtrResid()%></td>
-                        <td class="text-center">
-                            <a class="btn btn-warning" href="Controlador?accion=editar&id=<%= per.getAtrId()%>">Editar</a>
-                            <a class="btn btn-danger" href="Controlador?accion=eliminar&id=<%= per.getAtrId()%>">Remove</a>
+                        <td class="px-4 py-2"><%= per.getAtrId()%></td>
+                        <td class="px-4 py-2"><%= per.getAtrDni()%></td>
+                        <td class="px-4 py-2"><%= per.getAtrName()%></td>
+                        <td class="px-4 py-2"><%= per.getAtrLstName()%></td>
+                        <td class="px-4 py-2"><%= per.getAtrPhone()%></td>
+                        <td class="px-4 py-2"><%= per.getAtrEmail()%></td>
+                        <td class="px-4 py-2"><%= per.getAtrResid()%></td>
+                        <td class="px-4 py-2">
+                            <a class="inline-block px-3 py-1 text-sm text-white bg-yellow-500 rounded hover:bg-yellow-600" href="Controlador?accion=editar&id=<%= per.getAtrId()%>">Editar</a>
+                            <a class="inline-block px-3 py-1 text-sm text-white bg-red-500 rounded hover:bg-red-600" href="Controlador?accion=eliminar&id=<%= per.getAtrId()%>">Remove</a>
                         </td>
                     </tr>
                     <%}%>
@@ -59,3 +59,4 @@
         </div>
     </body>
 </html>
+
