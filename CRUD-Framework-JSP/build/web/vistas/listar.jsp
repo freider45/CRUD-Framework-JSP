@@ -23,7 +23,10 @@
                         <th class="text-center">ID</th>
                         <th class="text-center">DNI</th>
                         <th class="text-center">NOMBRES</th>
-                        <th class="text-center">ACCIONES</th>
+                        <th class="text-center">APELLIDOS</th>
+                        <th class="text-center">TELEFONO</th>
+                        <th class="text-center">EMAIL</th>
+                        <th class="text-center">RESIDENCIA</th>
                     </tr>
                 </thead>
                 <%
@@ -37,12 +40,16 @@
                 %>
                 <tbody>
                     <tr>
-                        <td class="text-center"><%= per.getId()%></td>
-                        <td class="text-center"><%= per.getDni()%></td>
-                        <td><%= per.getNom()%></td>
+                        <td class="text-center"><%= per.getAtrId()%></td>
+                        <td class="text-center"><%= per.getAtrDni()%></td>
+                        <td><%= per.getAtrName()%></td>
+                        <td><%= per.getAtrLstName()%></td>
+                        <td><%= per.getAtrPhone()%></td>
+                        <td><%= per.getAtrEmail()%></td>
+                        <td><%= per.getAtrResid()%></td>
                         <td class="text-center">
-                            <a class="btn btn-warning" href="Controlador?accion=editar&id=<%= per.getId()%>">Editar</a>
-                            <a class="btn btn-danger" href="Controlador?accion=eliminar&id=<%= per.getId()%>">Remove</a>
+                            <a class="btn btn-warning" href="Controlador?accion=editar&id=<%= per.getAtrId()%>">Editar</a>
+                            <a class="btn btn-danger" href="Controlador?accion=eliminar&id=<%= per.getAtrId()%>">Remove</a>
                         </td>
                     </tr>
                     <%}%>

@@ -51,8 +51,16 @@ public class Controlador extends HttpServlet {
         else if(action.equalsIgnoreCase("Agregar")){
             String dni=request.getParameter("txtDni");
             String nom=request.getParameter("txtNom");
-            p.setDni(dni);
-            p.setNom(nom);
+            String ape=request.getParameter("txtApe");
+            String tel=request.getParameter("txtTel");
+            String ema=request.getParameter("txtEma");
+            String res=request.getParameter("txtRes");
+            p.setAtrDni(dni);
+            p.setAtrName(nom);
+            p.setAtrLstName(ape);
+            p.setAtrPhone(tel);
+            p.setAtrEmail(ema);
+            p.setAtrResid(res);
             dao.add(p);
             acceso=listar;
         }
@@ -64,15 +72,23 @@ public class Controlador extends HttpServlet {
             id=Integer.parseInt(request.getParameter("txtid"));
             String dni=request.getParameter("txtDni");
             String nom=request.getParameter("txtNom");
-            p.setId(id);
-            p.setDni(dni);
-            p.setNom(nom);
+            String ape=request.getParameter("txtApe");
+            String tel=request.getParameter("txtTel");
+            String ema=request.getParameter("txtEma");
+            String res=request.getParameter("txtRes");
+            p.setAtrId(id);
+            p.setAtrDni(dni);
+            p.setAtrName(nom);
+            p.setAtrLstName(ape);
+            p.setAtrPhone(tel);
+            p.setAtrEmail(ema);
+            p.setAtrResid(res);
             dao.edit(p);
             acceso=listar;
         }
         else if(action.equalsIgnoreCase("eliminar")){
             id=Integer.parseInt(request.getParameter("id"));
-            p.setId(id);
+            p.setAtrId(id);
             dao.eliminar(id);
             acceso=listar;
         }

@@ -27,9 +27,13 @@ public class PersonaDAO implements CRUD{
             rs=ps.executeQuery();
             while(rs.next()){
                 Persona per=new Persona();
-                per.setId(rs.getInt("Id"));
-                per.setDni(rs.getString("DNI"));
-                per.setNom(rs.getString("Nombres"));
+                per.setAtrId(rs.getInt("Id"));
+                per.setAtrDni(rs.getString("DNI"));
+                per.setAtrName(rs.getString("Nombres"));    
+                per.setAtrLstName(rs.getString("Apellidos"));
+                per.setAtrPhone(rs.getString("Telefono"));
+                per.setAtrEmail(rs.getString("Email"));
+                per.setAtrResid(rs.getString("Residencia"));
                 list.add(per);
             }
         } catch (Exception e) {
@@ -45,10 +49,13 @@ public class PersonaDAO implements CRUD{
             ps=con.prepareStatement(sql);
             rs=ps.executeQuery();
             while(rs.next()){                
-                p.setId(rs.getInt("Id"));
-                p.setDni(rs.getString("DNI"));
-                p.setNom(rs.getString("Nombres"));
-                
+                p.setAtrId(rs.getInt("Id"));
+                p.setAtrDni(rs.getString("DNI"));
+                p.setAtrName(rs.getString("Nombres"));
+                p.setAtrLstName(rs.getString("Apellidos"));
+                p.setAtrPhone(rs.getString("Telefono"));
+                p.setAtrEmail(rs.getString("Email"));
+                p.setAtrResid(rs.getString("Residencia"));
             }
         } catch (Exception e) {
         }
@@ -57,7 +64,7 @@ public class PersonaDAO implements CRUD{
 
     @Override
     public boolean add(Persona per) {
-       String sql="insert into persona(DNI, Nombres)values('"+per.getDni()+"','"+per.getNom()+"')";
+       String sql="insert into persona(DNI, Nombres, Apellidos, Telefono, Email, Residencia) values ('"+per.getAtrDni()+"','"+per.getAtrName()+"','"+per.getAtrLstName()+"','"+per.getAtrPhone()+"','"+per.getAtrEmail()+"','"+per.getAtrResid()+"')";
         try {
             con=cn.getConnection();
             ps=con.prepareStatement(sql);
@@ -69,7 +76,7 @@ public class PersonaDAO implements CRUD{
 
     @Override
     public boolean edit(Persona per) {
-        String sql="update persona set DNI='"+per.getDni()+"',Nombres='"+per.getNom()+"'where Id="+per.getId();
+        String sql="update persona set DNI='"+per.getAtrDni()+"',Nombres='"+per.getAtrName()+"',Apellidos='"+per.getAtrLstName()+"',Telefono='"+per.getAtrPhone()+"',Email='"+per.getAtrEmail()+"',Residencia='"+per.getAtrResid()+"' where Id="+per.getAtrId();
         try {
             con=cn.getConnection();
             ps=con.prepareStatement(sql);
